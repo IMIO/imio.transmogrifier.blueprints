@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="imio.transmogrifier.blueprints">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".browser" />
+  <include package="imio.transmogrifier.cardimporter" />
+  <include package="imio.transmogrifier.PloneFormGen" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="imio.transmogrifier.blueprints"
+      directory="profiles/default"
+      description="Installs the imio.transmogrifier.blueprints add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="imio.transmogrifier.blueprints-postInstall"
+      title="imio.transmogrifier.blueprints post_install import step"
+      description="Post install import step from imio.transmogrifier.blueprints"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+</configure>

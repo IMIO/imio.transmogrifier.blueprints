@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="imio.transmogrifier.blueprints"
+      interface="imio.transmogrifier.blueprints.interfaces.IImioTransmogrifierBlueprintsLayer"
+      />
+</layers>
